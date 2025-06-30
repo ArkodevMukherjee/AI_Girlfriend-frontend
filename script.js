@@ -18,7 +18,7 @@ async function authenticate(endpoint) {
 
   console.log(password)
 
-  const res = await fetch(`http://localhost:5000/${endpoint}`, {
+  const res = await fetch(`https://luna-backend-f7f6ggevc6dxe8dd.canadacentral-01.azurewebsites.net/${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password }),
