@@ -1,0 +1,225 @@
+/* --- Global Body & Root Styles --- */
+body {
+    background-color: #1A1A2E; /* Deep Indigo/Charcoal - main background */
+    color: #E0E0E0; /* Soft off-white for general text, better contrast */
+    font-family: 'Inter', Arial, sans-serif; /* Prefer 'Inter' if available, otherwise Arial */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height to allow content to grow */
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.6; /* Improve readability */
+    box-sizing: border-box; /* Ensures padding/border are included in element's total width/height */
+}
+
+/* --- Container for Login/Signup Form --- */
+.container {
+    background-color: #2C2C40; /* Slightly lighter dark background for cards/panels */
+    padding: 30px;
+    border-radius: 12px; /* Slightly larger radius for softer look */
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow for dark theme */
+}
+
+/* --- General Input & Button Styles (for login/signup and chat form) --- */
+input,
+button {
+    width: 100%;
+    padding: 12px; /* Slightly more padding */
+    margin: 12px 0; /* Slightly more margin */
+    border: none;
+    border-radius: 8px; /* Consistent border-radius */
+    font-size: 1em; /* Ensure consistent font size */
+    box-sizing: border-box; /* Essential for width: 100% with padding */
+    transition: all 0.3s ease; /* Smooth transitions for interactions */
+}
+
+/* --- Input Field Specifics --- */
+input {
+    background-color: #3A3A50; /* Darker input background */
+    color: #E0E0E0; /* Text color inside input */
+    border: 1px solid #4C4C6C; /* Subtle border */
+    outline: none; /* Remove default focus outline */
+}
+
+input::placeholder {
+    color: #70708A; /* Placeholder text color */
+}
+
+input:focus {
+    border-color: #FF69B4; /* Highlight border with main gradient color on focus */
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.3); /* Soft glow on focus */
+}
+
+/* --- Button Specifics (Applies to all buttons initially) --- */
+button {
+    background-image: linear-gradient(to right, #FF69B4, #8A2BE2); /* Digital Rose Gradient for buttons */
+    color: white;
+    cursor: pointer;
+    font-weight: bold; /* Make buttons bold */
+    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.4); /* Shadow matching the gradient */
+}
+
+button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.6); /* Enhanced shadow on hover */
+}
+
+/* --- Error Message --- */
+.error {
+    color: #ff5555; /* A vibrant red for error messages */
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+/* --- Chat Page Styles --- */
+
+/* Main Page Title */
+h1 {
+    display: inline-block; /* Keeps it on its own line if content around it */
+    font-size: 3.5em; /* Larger for a main title */
+    font-weight: 800; /* Extra bold */
+    background-image: linear-gradient(to right, #FF69B4, #8A2BE2); /* Digital Rose Gradient */
+    -webkit-background-clip: text; /* CORRECTED: single hyphen */
+    background-clip: text;
+    color: transparent; /* Makes text transparent to show gradient */
+    margin-bottom: 25px; /* Spacing below the title */
+    line-height: 1.1; /* Tighter line height for large titles */
+    text-align: center; /* Center the heading if it's the main page title */
+    width: 100%; /* Ensure it takes full width for centering */
+}
+
+/* Subheading - if h2 is a sub-title */
+h2 {
+    display: inline; /* As per your original code */
+    color: #E0E0E0; /* Default text color for dark theme */
+    font-size: 1.8em; /* Appropriate size for a subheading */
+    font-weight: 600; /* Medium-bold */
+    margin-bottom: 15px;
+}
+
+/* Chat Form Container */
+#chat-form {
+    display: flex;
+    flex-direction: row; /* Aligns input and button side-by-side */
+    gap: 15px; /* Spacing between input and button */
+    margin-top: 20px; /* Spacing above the form */
+}
+
+/* Main Chat Window Container */
+.chat-container {
+    background-color: #2C2C40; /* Consistent card/panel background */
+    width: 90%;
+    max-width: 700px; /* Slightly wider max-width for better chat experience */
+    padding: 30px; /* Consistent padding */
+    border-radius: 15px; /* Consistent border-radius */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    box-sizing: border-box;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Consistent shadow */
+}
+
+/* Chat Message Display Box */
+#chat-box {
+    flex: 1; /* Takes available space */
+    overflow-y: auto; /* Enable scrolling */
+    background-color: #3A3A50; /* Consistent input/message background */
+    padding: 15px; /* More padding */
+    border-radius: 8px;
+    margin-bottom: 15px; /* More spacing below chat box */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between messages */
+}
+
+/* Individual Message Bubble */
+.message {
+    margin-bottom: 0; /* Gap handled by #chat-box gap */
+    padding: 12px 18px; /* More padding for message bubbles */
+    border-radius: 20px; /* More rounded bubbles */
+    max-width: 75%;
+    line-height: 1.5; /* Improved readability */
+    word-wrap: break-word; /* Ensure long words break */
+    color: #E0E0E0; /* Default message text color */
+}
+
+/* User's Message Bubble */
+.user {
+    /* A muted blue-violet that complements the Digital Rose theme */
+    background-color: #5C6BC0; /* Material Design Indigo 400 - subtle, yet distinct */
+    align-self: flex-end; /* Align to the right */
+    border-bottom-right-radius: 5px; /* Sharpen corner towards sender */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* AI Girlfriend's (Luna's) Message Bubble */
+.luna {
+    /* Using a vibrant part of the Digital Rose gradient for AI's messages */
+    background-color: #FF69B4; /* Hot Pink from Digital Rose */
+    align-self: flex-start; /* Align to the left */
+    border-bottom-left-radius: 5px; /* Sharpen corner towards sender */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Form Inputs */
+form input {
+    flex: 12;
+    /* Styles inherited from general input, ensuring consistency */
+}
+
+/* Chat Form Send Button */
+form button {
+    flex: 2;
+    /* Styles inherited from general button, ensuring consistency */
+    padding: 12px 25px; /* Adjust padding for better look in chat form */
+    margin: 0; /* Remove default margin */
+}
+
+/* Logout Button */
+#logout-btn {
+    background-color: #D32F2F; /* A standard, clear red for logout */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    margin-top: 20px; /* Spacing from chat form */
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4); /* Red shadow */
+    transition: all 0.3s ease;
+    align-self: center; /* Center the logout button if placed independently */
+    display: block; /* Ensure it takes full width for centering or adjust */
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Make button only as wide as its content */
+}
+
+#logout-btn:hover {
+    background-color: #C62828; /* Slightly darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.6);
+}
+
+/* --- Custom Scrollbar (WebKit browsers like Chrome, Safari, Edge) --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3A3A50; /* Darker track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #FF69B4, #8A2BE2); /* Digital Rose gradient thumb */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #FF80CC, #9B3AF0); /* Slightly lighter gradient on hover */
+}
