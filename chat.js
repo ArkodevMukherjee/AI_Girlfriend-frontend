@@ -18,12 +18,13 @@ form.addEventListener("submit", async (e) => {
 
   appendMessage("user", userMsg);
   input.value = "";
+  console.log(token)
 
-  const response = await fetch("https://luna-girlfriend-ai-friend-dqesh3azdja6frbt.canadacentral-01.azurewebsites.net/login/chat", {
+  const response = await fetch("https://luna-girlfriend-ai-friend-dqesh3azdja6frbt.canadacentral-01.azurewebsites.net/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: "Bearer " + token,
     },
     body: JSON.stringify({ message: userMsg }),
   });
