@@ -19,7 +19,7 @@ form.addEventListener("submit", async (e) => {
   appendMessage("user", userMsg);
   input.value = "";
 
-  const response = await fetch("https://girlfriendai-bmg9fbh6ezfugeg9.canadacentral-01.azurewebsites.net/chat", {
+  const response = await fetch("https://luna-girlfriend-ai-friend-dqesh3azdja6frbt.canadacentral-01.azurewebsites.net/login/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
