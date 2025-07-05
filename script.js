@@ -18,7 +18,7 @@ async function authenticate(endpoint) {
 
   console.log(password)
 
-  const res = await fetch(`https://girlfriendai-bmg9fbh6ezfugeg9.canadacentral-01.azurewebsites.net/${endpoint}`, {
+  const res = await fetch(`https://luna-girlfriend-ai-friend-dqesh3azdja6frbt.canadacentral-01.azurewebsites.net/login/${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password }),
